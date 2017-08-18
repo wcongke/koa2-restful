@@ -1,0 +1,15 @@
+{
+	"ignore": [
+    	".git",
+    	"logs",
+    	"README.md",
+		"node_modules/**/node_modules"
+	],
+	"verbose": true,
+	"watch": [
+    	"bin",
+    	"config",
+    	"src"
+	],
+	"ext": "js json"
+}

@@ -1,5 +1,5 @@
 # koa2-restful
-> 基于koa2的restful api工程
+> 基于koa2的restful api工程框架
 
 #### 目录结构
 ```
