@@ -1,0 +1,42 @@
+{
+  "name": "koa2-restful",
+  "version": "1.0.0",
+  "description": "restful api(koa2)",
+  "main": "index.js",
+  "scripts": {
+    "prod": "cross-env NODE_ENV=production node bin/server.js",
+    "dev": "cross-env NODE_ENV=development node bin/server.js",
+    "local": "cross-env NODE_ENV=local node bin/server.js",
+    "test": "cross-env NODE_ENV=test node bin/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wcongke/koa2-restful.git"
+  },
+  "keywords": [
+    "koa2",
+    "restful api"
+  ],
+  "author": "wcongke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wcongke/koa2-restful/issues"
+  },
+  "homepage": "https://github.com/wcongke/koa2-restful#readme",
+  "dependencies": {
+    "koa": "^2.3.0",
+    "koa-body": "^2.3.0",
+    "koa-router": "^7.2.1",
+    "mongoose": "^4.11.7"
+  },
+  "devDependencies": {
+    "bluebird": "^3.5.0",
+    "cross-env": "^5.0.5",
+    "extend": "^3.0.1",
+    "standard": "^10.0.3"
+  },
+  "engines": {
+    "node": "^7.6.0",
+    "npm": "^4.0.0"
+  }
+}
