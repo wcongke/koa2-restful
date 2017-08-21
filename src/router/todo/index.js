@@ -6,11 +6,14 @@ module.exports = function (router, koaBody) {
     .get('/todos', todo.list)
 
     // 获取todo详情
-    .get('/todos/:id', todo.detail)
+    .get('/todo/:id', todo.detail)
 
     // 新建todo
-    .post('/todos/add', koaBody, todo.add)
+    .post('/todo/add', koaBody, todo.add)
+
+    // 更新todo
+    .patch('/todo/edit', koaBody, todo.edit)
 
     // 删除todo
-    .del('/todos/:id', todo.del)
+    .del('/todo/:id', todo.del)
 }

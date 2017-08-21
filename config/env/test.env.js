@@ -15,7 +15,7 @@ module.exports = {
       // mongoose 配置
     },
     api: {
-      db: 'mongodb://localhost:27017/test_db'
+      db: 'mongodb://localhost:27017/todo'
       // db: 'mongodb://username:password@host:port/dbname'
     }
   },
