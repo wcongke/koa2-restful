@@ -29,3 +29,16 @@ curl --request PATCH \
 curl --request DELETE \
      --url http://localhost:20177/todo/6
 ```
+
+### 设置todo有效期
+```bash
+curl --request POST \
+     --url http://localhost:20177/todo/endTime \
+     --data '{\n	"id": 1,\n	"endTime": "2017-10-10"\n}'
+```
+
+### 获取todo有效期
+```bash
+curl --request GET \
+     --url http://localhost:20177/todo/endTime/1
+```

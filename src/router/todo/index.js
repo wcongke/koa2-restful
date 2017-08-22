@@ -16,4 +16,10 @@ module.exports = function (router, koaBody) {
 
     // 删除todo
     .del('/todo/:id', todo.del)
+
+    // 设置todo有效期
+    .post('/todo/endTime', koaBody, todo.setTime)
+
+    // 获取todo有效期
+    .get('/todo/endTime/:id', todo.getTime)
 }

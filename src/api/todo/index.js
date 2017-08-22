@@ -1,7 +1,7 @@
 const TodoModel = require('../../model/todo/index')
 
 /**
- * 获取Todos
+ * 获取todos
  * @returns {Array} todos
  */
 function getTodos () {
@@ -26,7 +26,7 @@ function getTodos () {
 }
 
 /**
- * 获取Todo
+ * 获取todo
  * @param {Number} id id
  * @returns {Object} todo
  */
@@ -47,7 +47,7 @@ function getTodo (id) {
 }
 
 /**
- * 创建Todo
+ * 创建todo
  * @param {Object} data data
  * @returns {Object} todo
  */
@@ -74,7 +74,7 @@ function editTodo (id, data) {
 }
 
 /**
- * 删除Todo
+ * 删除todo
  * @return {Object} todo
  */
 function delTodo (id) {
@@ -85,7 +85,7 @@ function delTodo (id) {
   })
 }
 
-// 获取TODO列表
+// 获取todo列表
 module.exports.list = async (ctx, next) => {
   ctx.body = {
     code: '1',
@@ -107,7 +107,7 @@ module.exports.detail = async (ctx, next) => {
   }
 }
 
-// 新建TODO
+// 新建todo
 module.exports.add = async (ctx, next) => {
   const body = ctx.request.body
 
@@ -192,12 +192,64 @@ module.exports.edit = async (ctx, next) => {
   }
 }
 
-// 删除TODO
+// 删除todo
 module.exports.del = async (ctx, next) => {
   const deleted = await delTodo(ctx.params.id)
 
   ctx.body = {
     code: deleted ? '1' : '0',
     desc: deleted ? 'ok' : 'todo id 不存在'
+  }
+}
+
+// 设置todo有效期
+module.exports.setTime = async (ctx, next) => {
+  const body = ctx.request.body
+  const TODO = await getTodo(body.id)
+
+  if (!TODO) {
+    ctx.body = {
+      code: '0',
+      desc: 'todo 不存在'
+    }
+  }
+
+  ctx.cookies.set(
+    `todo_${body.id}`,
+    JSON.stringify({
+      id: body.id,
+      endTime: body.endTime
+    }),
+    {
+      domain: 'localhost',              // 写cookie所在的域名
+      path: '/todo/endTime',            // 写cookie所在的路径
+      maxAge: 10 * 60 * 1000,           // cookie有效时长
+      expires: new Date(body.endTime),  // cookie失效时间
+      httpOnly: false,                  // 是否只用于http请求中获取
+      overwrite: true                   // 是否允许重写
+    }
+  )
+
+  ctx.body = {
+    code: '1',
+    desc: 'ok'
+  }
+}
+
+module.exports.getTime = async (ctx, next) => {
+  const data = ctx.cookies.get(
+    `todo_${ctx.params.id}`,
+    {
+      domain: 'localhost',
+      path: '/todo/endTime'
+    }
+  )
+
+  ctx.body = {
+    code: data ? '1' : '0',
+    desc: data ? 'ok' : '无有效期',
+    result: {
+      todo: data ? JSON.parse(data) : ''
+    }
   }
 }

@@ -49,7 +49,9 @@ mongoimport -d todo -c todos ./mongo/todos.json
 ```
 
 #### 启动工程
+- 调试地址 `localhost:20177`
 - 开发 `npm run dev`
-- 正式 `npm run prod`
 - 本地 `npm run local`
 - 测试 `npm run test`
+- 正式 `npm run prod`
+
