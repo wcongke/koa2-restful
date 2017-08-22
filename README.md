@@ -9,8 +9,10 @@
 ├── mongo            // mongodb
 ├── src              // 主代码目录
 │    ├── api         // 接口目录
+│    ├── controllers // 操作层
 │    ├── model       // 数据模型
 │    ├── router      // 路由配置
+│    ├── views       // 视图模板
 │    └── app.js      // 工程入口
 ├── .gitignore       // Git忽略配置
 ├── .npmrc           // npm配置
@@ -29,6 +31,7 @@
 #### 工程依赖
 - [koa-router](https://github.com/alexmingoia/koa-router)
 - [koa-body](https://github.com/dlau/koa-body)
+- [koa-views](https://github.com/queckezz/koa-views)
 - [mongoose](https://github.com/Automattic/mongoose)
 
 #### 安装依赖
