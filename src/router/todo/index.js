@@ -1,6 +1,6 @@
 const todo = require('../../api/todo/index')
 
-module.exports = function (router, koaBody) {
+module.exports = (router, koaBody) => {
   router
     // 获取todos列表
     .get('/todos', todo.list)

@@ -1,6 +1,6 @@
 const home = require('../../controllers/home')
 
-module.exports = function (router) {
+module.exports = (router) => {
   router
     .get('/', home)
 }

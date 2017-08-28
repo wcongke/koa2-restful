@@ -34,7 +34,7 @@ curl --request DELETE \
 ```bash
 curl --request POST \
      --url http://localhost:20177/todo/endTime \
-     --data '{\n	"id": 1,\n	"endTime": "2017-10-10"\n}'
+     --data '{"id": 1,"endTime": "2017-10-10"}'
 ```
 
 ### 获取todo有效期

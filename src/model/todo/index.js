@@ -5,7 +5,7 @@ const TodoSchema = new mongoose.Schema({
     unique: true,
     type: Number
   },
-  info: 'String'
+  info: String
 })
 
 const Todo = mongoose.model('todos', TodoSchema)
