@@ -8,13 +8,13 @@ const db = mongoose.connect(config.mongo.api.db, {
 
 db
   .on('error', (err) => {
-    console.log(`----数据库链接失败: ${err}----`)
+    console.log(`----mongodb链接失败: ${err}----`)
   })
   .on('disconnected', () => {
-    console.log('----数据库链接断开----')
+    console.log('----mongodb链接断开----')
   })
   .on('open', () => {
-    console.log('----数据库链接成功----')
+    console.log('----mongodb链接成功----')
   })
 
 module.exports = mongoose

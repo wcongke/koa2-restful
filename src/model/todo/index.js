@@ -1,4 +1,4 @@
-const mongoose = require('../index')
+const mongoose = require('../mongo')
 
 const TodoSchema = new mongoose.Schema({
   id: {

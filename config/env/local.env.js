@@ -20,6 +20,13 @@ module.exports = {
     }
   },
 
+  // redis配置
+  redis: {
+    HOSTNAME: 'localhost',
+    PORT: 6379,
+    options: {}
+  },
+
   // session配置
   session: {}
 }

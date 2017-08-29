@@ -29,13 +29,15 @@
     "koa-body": "^2.3.0",
     "koa-router": "^7.2.1",
     "koa-views": "^6.0.2",
-    "mongoose": "^4.11.7"
+    "mongoose": "^4.11.7",
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "bluebird": "^3.5.0",
     "cross-env": "^5.0.5",
     "extend": "^3.0.1",
     "nodemon": "^1.11.0",
+    "sha1": "^1.1.1",
     "standard": "^10.0.3"
   },
   "engines": {

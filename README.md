@@ -33,6 +33,7 @@
 - [koa-body](https://github.com/dlau/koa-body)
 - [koa-views](https://github.com/queckezz/koa-views)
 - [mongoose](https://github.com/Automattic/mongoose)
+- [node_redis](https://github.com/NodeRedis/node_redis)
 
 #### 安装依赖
 ```bash
@@ -46,6 +47,16 @@ mongoexport -d todo -c todos -o ./mongo/todos.json --type json
 
 # 导入集合
 mongoimport -d todo -c todos ./mongo/todos.json
+```
+
+#### redis相关
+```bash
+# mac安装 Redis
+brew install Redis
+# 启动 Redis Server
+redis-server
+# 前端 Redis 客户端
+redis-cli
 ```
 
 #### 启动工程
